@@ -8,23 +8,23 @@ const Header = () => {
     return (
         <div className={"header"}>
 
-            <Link className={"logo-container"} to={"/"}>
-                <Logo className={"logo"}/>
-            </Link>
+    <Link className={"logo-container"} to={"/"}>
+        <Logo className={"logo"}/>
+    </Link>
 
-            <div className={"options"}>
+    <div className={"options"}>
 
-                <Link className={"option"} to={"/shop"}>
-                    SHOP
-                </Link>
+        <Link className={"option"} to={"/shop"}>
+            SHOP
+        </Link>
 
-                <Link className={"option"} to={"/shop"}>
-                    CONTACT
-                </Link>
+        <Link className={"option"} to={"/shop"}>
+            CONTACT
+        </Link>
 
-            </div>
-        </div>
-    )
+    </div>
+</div>
+)
 }
 
 export default Header;

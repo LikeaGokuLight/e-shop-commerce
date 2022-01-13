@@ -5,6 +5,7 @@ import './styles/App.css';
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shop/shop";
 import Header from "./components/header/header";
+import Sign from "./pages/sign/sign";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
             <Routes>
                 <Route path={"/"} element={<HomePage/>} />
                 <Route path={"/shop"} element={<ShopPage/>} />
+                <Route path={"/sign"} element={<Sign/>} />
             </Routes>
         </div>
     )
