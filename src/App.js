@@ -1,11 +1,9 @@
 import React from 'react';
-import { Routes ,Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './styles/App.css';
 
 import HomePage from "./pages/homepage/homepage";
-
-
-const HatsPage = () => <div><h1>Hats Page</h1></div>
+import ShopPage from "./pages/shop/shop";
 
 
 const App = () => {
@@ -13,7 +11,7 @@ const App = () => {
         <div>
             <Routes>
                 <Route path={"/"} element={<HomePage/>} />
-                <Route path={"/shop/hats"} element={<HatsPage/>} />
+                <Route path={"/shop"} element={<ShopPage/>} />
             </Routes>
         </div>
     )
