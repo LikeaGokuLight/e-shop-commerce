@@ -9,6 +9,10 @@
   cursor: pointer;
   outline-offset: 4px;
 
+  &:hover {
+    background-color: #57ff49;
+  }
+
   .front {
     display: block;
     padding: 12px 48px;
@@ -17,6 +21,11 @@
     background: #BAFFB4;
     color: black;
     transform: translateY(-6px);
+
+    &:hover {
+      background-color: #57ff49;
+      color: white;
+    }
   }
 
   &:active .front {

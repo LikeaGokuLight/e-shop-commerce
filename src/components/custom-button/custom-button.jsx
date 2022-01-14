@@ -5,7 +5,7 @@ const CustomButton = ({ children, ...otherProps }) => {
     return (
         <button className="pushable" { ...otherProps }>
             <span className="front">
-                { children.toUpperCase() }
+                { children }
             </span>
         </button>)
 }
