@@ -1,44 +1,52 @@
 import React from "react";
 import "./header.scss";
 
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 
 import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/Larkef x Rareblocks _ Logo #13.svg";
 
-import{ auth } from "../../firebase/firebase.utils";
+import {auth} from "../../firebase/firebase.utils";
+import CartIcon from "../cart-icon/cart-icon";
+import CartDropdown from "../cart/cart-dropdown/cart-dropdown";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
     return (
         <div className={"header"}>
 
-    <Link className={"logo-container"} to={"/"}>
-        <Logo className={"logo"}/>
-    </Link>
+            <Link className={"logo-container"} to={"/"}>
+                <Logo className={"logo"}/>
+            </Link>
 
-    <div className={"options"}>
+            <div className={"options"}>
 
-        <Link className={"option"} to={"/shop"}>
-            SHOP
-        </Link>
+                <Link className={"option"} to={"/shop"}>
+                    SHOP
+                </Link>
 
-        <Link className={"option"} to={"/shop"}>
-            CONTACT
-        </Link>
+                <Link className={"option"} to={"/shop"}>
+                    CONTACT
+                </Link>
 
-        {
-            currentUser
-                ? <div className={"option"} onClick={() => auth.signOut()}>SIGN OUT</div>
-                : <Link className={"option"} to={"/sign"}>SIGN IN</Link>
-        }
+                {
+                    currentUser
+                        ? <div className={"option"} onClick={() => auth.signOut()}>SIGN OUT</div>
+                        : <Link className={"option"} to={"/sign"}>SIGN IN</Link>
+                }
 
-    </div>
-</div>
-)
+                <CartIcon/>
+
+            </div>
+            {
+                hidden ? null : <CartDropdown/>
+            }
+        </div>
+    )
 }
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+    currentUser,
+    hidden
 })
 
 export default connect(
